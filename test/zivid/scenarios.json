@@ -1,0 +1,35 @@
+{
+    "ubuntu_22_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:jammy",
+        "features": {
+            "zivid": {
+                "ubuntuVersion": "22"
+            }
+        }
+    },
+    "ubuntu_24_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:noble",
+        "features": {
+            "zivid": {
+                "ubuntuVersion": "24"
+            }
+        }
+    },
+    "ubuntu_20_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:focal",
+        "features": {
+            "zivid": {
+                "ubuntuVersion": "20"
+            }
+        }
+    },
+    "ubuntu_24_custom_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:noble",
+        "features": {
+            "zivid": {
+                "ubuntuVersion": "24",
+                "zividVersion": "2.16.0+46cdaba6-1"
+            }
+        }
+    }
+}
