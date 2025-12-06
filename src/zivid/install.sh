@@ -18,7 +18,13 @@ echo "The effective dev container containerUser's home directory is '$_CONTAINER
 
 # --- Install Zivid SDK ---
 echo "Installing Zivid SDK..."
+rm -rf /var/lib/apt/lists/*
+if [ "$(id -u)" -ne 0 ]; then
+    echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
+    exit 1
+fi
 
+export DEBIAN_FRONTEND=noninteractive
 # Update package list and install prerequisites
 apt-get update && apt-get install --assume-yes \
     wget \
@@ -55,5 +61,9 @@ fi
 if ! getent group render >/dev/null; then
     groupadd --gid 992 render
 fi
+
+# Clean up
+rm -rf /var/lib/apt/lists/*
+export DEBIAN_FRONTEND=dialog
 
 echo "Zivid SDK installation completed successfully!"

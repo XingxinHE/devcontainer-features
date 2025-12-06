@@ -6,8 +6,8 @@
     "options": {
         "packages": {
             "type": "string",
-            "default": "utils, dev, dbg",
-            "description": "Comma-separated list of packages to install. Options: utils, dev, dbg."
+            "default": "utils,dev,dbg",
+            "description": "Comma-separated list of packages to install. Options: utils,dev,dbg."
         }
     },
     "installsAfter": [

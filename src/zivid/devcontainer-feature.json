@@ -15,5 +15,8 @@
             "default": "2.17.1+7516d437-1",
             "description": "Zivid SDK version to install"
         }
-    }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils:2"
+    ]
 }

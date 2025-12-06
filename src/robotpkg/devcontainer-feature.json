@@ -6,7 +6,7 @@
     "options": {
         "packages": {
             "type": "string",
-            "default": "",
+            "default": "robotpkg-pinocchio",
             "description": "Comma-separated list of robotpkg packages to install (e.g. robotpkg-pinocchio)."
         }
     },

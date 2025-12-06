@@ -5,6 +5,15 @@ PACKAGES=${PACKAGES:-""}
 
 echo "Activating feature 'robotpkg'"
 
+rm -rf /var/lib/apt/lists/*
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
+    exit 1
+fi
+
+export DEBIAN_FRONTEND=noninteractive
+
 # Install prerequisites
 apt-get update && apt-get install -y --no-install-recommends \
     curl \
@@ -21,6 +30,11 @@ echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/robotpkg.asc] http://robotpkg.
 
 apt-get update
 
+if [ -z "${PACKAGES}" ]; then
+    echo "No packages specified, and no upgrade required. Skip installation..."
+    exit 0
+fi
+
 # 3. Install packages if provided
 if [ -n "$PACKAGES" ]; then
     # Replace commas with spaces for apt-get
@@ -33,5 +47,6 @@ fi
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
+export DEBIAN_FRONTEND=dialog
 
 echo "Robotpkg feature installation complete."
