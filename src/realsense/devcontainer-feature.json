@@ -1,0 +1,16 @@
+{
+    "name": "Intel Realsense SDK",
+    "id": "realsense",
+    "version": "1.0.0",
+    "description": "Installs Intel Realsense SDK 2.0",
+    "options": {
+        "packages": {
+            "type": "string",
+            "default": "utils, dev, dbg",
+            "description": "Comma-separated list of packages to install. Options: utils, dev, dbg."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils:2"
+    ]
+}

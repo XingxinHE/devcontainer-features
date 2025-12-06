@@ -1,0 +1,10 @@
+{
+    "install_pinocchio": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "robotpkg": {
+                "packages": "robotpkg-pinocchio"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "install_utils": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "realsense": {
+                "packages": "utils"
+            }
+        }
+    }
+}
