@@ -1,0 +1,16 @@
+{
+    "name": "Robotpkg",
+    "id": "robotpkg",
+    "version": "1.0.0",
+    "description": "Sets up the robotpkg repository and installs optional packages.",
+    "options": {
+        "packages": {
+            "type": "string",
+            "default": "robotpkg-pinocchio",
+            "description": "Comma-separated list of robotpkg packages to install (e.g. robotpkg-pinocchio)."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils:2"
+    ]
+}
