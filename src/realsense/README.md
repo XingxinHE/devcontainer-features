@@ -24,9 +24,13 @@ Intel RealSense cameras provide depth perception and tracking capabilities for r
 
 ## Requirements
 
-- Ubuntu 20.04, 22.04, or 24.04
+- **Ubuntu 20.04, 22.04, or 24.04** (Debian is not supported by Intel's repository)
 - Network access to download packages from Intel's repository
 - Compatible Intel RealSense camera hardware
+
+## Platform Support
+
+This feature only supports **Ubuntu** distributions. Debian is not supported because Intel's RealSense repository does not provide Debian packages.
 
 ## Features
 

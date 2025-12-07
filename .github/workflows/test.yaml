@@ -20,6 +20,10 @@ jobs:
           - debian:latest
           - ubuntu:latest
           - mcr.microsoft.com/devcontainers/base:ubuntu
+        exclude:
+          # Exclude debian:latest for features that only support Ubuntu
+          - features: realsense
+            baseImage: debian:latest
     steps:
       - uses: actions/checkout@v4
 
