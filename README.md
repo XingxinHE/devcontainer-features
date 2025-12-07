@@ -4,16 +4,19 @@ This is my current tech stacks.
 
 ## Features
 
-This repository contains a _collection_ of Features.
+This repository contains a _collection_ of DevContainer Features for robotics and computer vision development.
 
-| Name | URL | Description |
-| ---  | --- | ---         |
-| zivid | https://support.zivid.com/en/latest/getting-started/software-installation.html | The SDK and software for Zivid 3D color cameras. |
+| Name | Description |
+| ---  | ---         |
+| [zivid](./src/zivid/README.md) | The SDK and software for Zivid 3D color cameras. |
+| [realsense](./src/realsense/README.md) | Intel RealSense SDK 2.0 for depth cameras. |
+| [robotpkg](./src/robotpkg/README.md) | Robotpkg repository with robotics software packages. |
 
+## Quick Start
 
-### zivid
+Add any of these features to your `devcontainer.json`:
 
-Zivid camera SDK and software.
+### Zivid 3D Camera
 
 ```jsonc
 {
@@ -21,12 +24,40 @@ Zivid camera SDK and software.
     "features": {
         "zivid": {
             "ubuntuVersion": "24",
-            "zividVersion": "2.16.0+46cdaba6-1"
+            "zividVersion": "2.17.1+7516d437-1"
         }
     }
 }
 ```
 
-```bash
-ZividListCameras
+### Intel RealSense
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "features": {
+        "realsense": {
+            "packages": "utils,dev,dbg"
+        }
+    }
+}
 ```
+
+### Robotpkg
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "features": {
+        "robotpkg": {
+            "packages": "robotpkg-pinocchio"
+        }
+    }
+}
+```
+
+## Repository Structure
+
+- `src/<feature>/` - Feature source code and installation scripts
+- `test/<feature>/` - Automated tests for each feature
+- `.github/workflows/` - CI/CD for testing and releasing features
