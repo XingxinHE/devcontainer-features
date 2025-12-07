@@ -13,6 +13,8 @@ jobs:
     strategy:
       matrix:
         features:
+          - realsense
+          - robotpkg
           - zivid
         baseImage:
           - debian:latest
@@ -33,6 +35,8 @@ jobs:
     strategy:
       matrix:
         features:
+          - realsense
+          - robotpkg
           - zivid
     steps:
       - uses: actions/checkout@v4
